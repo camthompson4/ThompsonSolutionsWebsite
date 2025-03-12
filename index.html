@@ -6,6 +6,8 @@
     <meta name="theme-color" content="#0A3161">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Thompson Solutions LLC - Professional Business Solutions">
+    <meta name="format-detection" content="telephone=no">
     <title>Thompson Solutions LLC</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -19,11 +21,13 @@
     <header>
         <nav>
             <div class="logo">
-                <h1>Thompson Solutions LLC</h1>
+                <div class="logo-mark">
+                    <img src="logo.svg" alt="Thompson Solutions" class="brand-svg" loading="eager">
+                </div>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -59,6 +63,16 @@
                     <h2>About Thompson Solutions</h2>
                     <p>Thompson Solutions LLC is a Palm Beach County-based consulting firm founded by Cameron Thompson, a seasoned professional with extensive experience in corporate finance, fintech, and business development. We specialize in empowering local service-based businesses through innovative AI solutions and strategic guidance, helping them achieve sustainable growth and market leadership.</p>
                     
+                    <div class="nonprofit-box">
+                        <h3>Down Range Hunt Club</h3>
+                        <p>Proudly founded Down Range Hunt Club, a non-profit organization dedicated to serving our nation's heroes. We provide hunting and fishing experiences for veterans and first responders, ensuring 100% of donations directly benefit:</p>
+                        <ul class="nonprofit-list">
+                            <li>50% to Tunnel to Towers Foundation</li>
+                            <li>50% to fund hunting and fishing experiences for veterans and first responders</li>
+                        </ul>
+                        <p class="nonprofit-mission">Our mission is to give back to those who have given so much for our country, creating meaningful outdoor experiences while supporting trusted charitable organizations.</p>
+                    </div>
+                    
                     <div class="mission-box">
                         <h3>Our Mission</h3>
                         <p>To revolutionize business development for service-based entrepreneurs through:</p>
@@ -85,6 +99,52 @@
                                 <h4>Excellence</h4>
                                 <p>Delivering exceptional results through dedication and expertise</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nonprofit">
+            <div class="nonprofit-container">
+                <div class="nonprofit-content">
+                    <div class="nonprofit-header">
+                        <div class="nonprofit-logo">
+                            <img src="./logo.svg" alt="Down Range Hunt Club Logo" class="nonprofit-logo-img">
+                        </div>
+                        <h2>Down Range Hunt Club</h2>
+                    </div>
+                    <div class="nonprofit-hero">
+                        <div class="nonprofit-overlay"></div>
+                        <div class="nonprofit-text">
+                            <h3>Supporting Our Heroes</h3>
+                            <p>Creating meaningful outdoor experiences for veterans and first responders</p>
+                        </div>
+                    </div>
+                    
+                    <div class="nonprofit-details">
+                        <div class="nonprofit-mission-statement">
+                            <h3>Our Mission</h3>
+                            <p>Down Range Hunt Club is dedicated to serving those who have served us. Through hunting and fishing experiences, we create opportunities for veterans and first responders to connect with nature and each other.</p>
+                        </div>
+                        
+                        <div class="donation-split">
+                            <h3>100% Donation Distribution</h3>
+                            <div class="split-grid">
+                                <div class="split-item">
+                                    <h4>50%</h4>
+                                    <p>Tunnel to Towers Foundation</p>
+                                </div>
+                                <div class="split-item">
+                                    <h4>50%</h4>
+                                    <p>Hunting & Fishing Experiences</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-container">
+                            <a href="#contact" class="nonprofit-cta">Support Our Mission</a>
+                            <p class="cta-note">Every donation directly supports our heroes</p>
                         </div>
                     </div>
                 </div>
@@ -556,6 +616,33 @@
                 attemptRecovery(new Error('Carousel disabled'), 'healthCheck');
             }
         }, RECOVERY_DELAY);
+
+        function handleImageError(img) {
+            console.error(`Failed to load image: ${img.src}`);
+            // Fallback to text if image fails
+            const fallbackText = document.createElement('div');
+            fallbackText.className = 'logo-fallback';
+            fallbackText.textContent = 'TS';
+            img.parentNode.replaceChild(fallbackText, img);
+        }
+
+        // Preload critical images
+        window.addEventListener('load', function() {
+            const criticalImages = [
+                './logo.svg'
+            ];
+            criticalImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+
+        // Add loading detection
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.classList.add('loaded');
+            });
+        });
     </script>
 </body>
 </html> 
