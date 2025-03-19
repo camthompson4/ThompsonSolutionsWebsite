@@ -18,7 +18,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    height: 100px;
+    height: 80px;
 }
 
 nav {
@@ -37,11 +37,11 @@ nav {
 }
 
 .logo-mark {
-    width: 300px;
+    width: 250px;
     height: auto;
     display: flex;
     align-items: center;
-    padding: 10px 0;
+    padding: 5px 15px;
 }
 
 .brand-svg {
@@ -251,18 +251,21 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    nav {
+        padding: 0.3rem 5%;
+    }
+
     .nav-links {
-        gap: 1.5rem;
-        align-items: center;
+        gap: 1rem;
     }
 
     .nav-links a {
-        font-size: 0.95rem;
-        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
     }
 
     .logo-mark {
-        width: 220px;
+        width: 180px;
     }
 
     header {

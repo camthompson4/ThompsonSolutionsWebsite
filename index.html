@@ -22,7 +22,7 @@
         <nav>
             <div class="logo">
                 <div class="logo-mark">
-                    <img src="logo.svg" alt="Thompson Solutions" class="brand-svg" loading="eager">
+                    <img src="./2.svg" alt="Thompson Solutions" class="brand-svg" loading="eager">
                 </div>
             </div>
             <ul class="nav-links">
@@ -108,12 +108,7 @@
         <section id="nonprofit">
             <div class="nonprofit-container">
                 <div class="nonprofit-content">
-                    <div class="nonprofit-header">
-                        <div class="nonprofit-logo">
-                            <img src="./logo.svg" alt="Down Range Hunt Club Logo" class="nonprofit-logo-img">
-                        </div>
-                        <h2>Down Range Hunt Club</h2>
-                    </div>
+                    <h2>Down Range Hunt Club</h2>
                     <div class="nonprofit-hero">
                         <div class="nonprofit-overlay"></div>
                         <div class="nonprofit-text">
@@ -642,6 +637,19 @@
             img.addEventListener('load', function() {
                 this.classList.add('loaded');
             });
+        });
+
+        // Image error handling
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                console.error(`Failed to load image: ${this.src}`);
+                this.style.display = 'none';
+            });
+        });
+
+        // Verify image loading
+        window.addEventListener('load', function() {
+            console.log('All resources finished loading!');
         });
     </script>
 </body>
