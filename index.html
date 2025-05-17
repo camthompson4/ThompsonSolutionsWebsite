@@ -22,7 +22,7 @@
         <nav>
             <div class="logo">
                 <div class="logo-mark">
-                    <img src="./2.svg" alt="Thompson Solutions" class="brand-svg" loading="eager">
+                    <img src="https://placehold.co/100x100/0A3161/FFFFFF?text=Logo" alt="Thompson Solutions" class="brand-svg" loading="eager">
                 </div>
             </div>
             <ul class="nav-links">
@@ -63,16 +63,6 @@
                     <h2>About Thompson Solutions</h2>
                     <p>Thompson Solutions LLC is a Palm Beach County-based consulting firm founded by Cameron Thompson, a seasoned professional with extensive experience in corporate finance, fintech, and business development. We specialize in empowering local service-based businesses through innovative AI solutions and strategic guidance, helping them achieve sustainable growth and market leadership.</p>
                     
-                    <div class="nonprofit-box">
-                        <h3>Down Range Hunt Club</h3>
-                        <p>Proudly founded Down Range Hunt Club, a non-profit organization dedicated to serving our nation's heroes. We provide hunting and fishing experiences for veterans and first responders, ensuring 100% of donations directly benefit:</p>
-                        <ul class="nonprofit-list">
-                            <li>50% to Tunnel to Towers Foundation</li>
-                            <li>50% to fund hunting and fishing experiences for veterans and first responders</li>
-                        </ul>
-                        <p class="nonprofit-mission">Our mission is to give back to those who have given so much for our country, creating meaningful outdoor experiences while supporting trusted charitable organizations.</p>
-                    </div>
-                    
                     <div class="mission-box">
                         <h3>Our Mission</h3>
                         <p>To revolutionize business development for service-based entrepreneurs through:</p>
@@ -105,47 +95,6 @@
             </div>
         </section>
 
-        <section id="nonprofit">
-            <div class="nonprofit-container">
-                <div class="nonprofit-content">
-                    <h2>Down Range Hunt Club</h2>
-                    <div class="nonprofit-hero">
-                        <div class="nonprofit-overlay"></div>
-                        <div class="nonprofit-text">
-                            <h3>Supporting Our Heroes</h3>
-                            <p>Creating meaningful outdoor experiences for veterans and first responders</p>
-                        </div>
-                    </div>
-                    
-                    <div class="nonprofit-details">
-                        <div class="nonprofit-mission-statement">
-                            <h3>Our Mission</h3>
-                            <p>Down Range Hunt Club is dedicated to serving those who have served us. Through hunting and fishing experiences, we create opportunities for veterans and first responders to connect with nature and each other.</p>
-                        </div>
-                        
-                        <div class="donation-split">
-                            <h3>100% Donation Distribution</h3>
-                            <div class="split-grid">
-                                <div class="split-item">
-                                    <h4>50%</h4>
-                                    <p>Tunnel to Towers Foundation</p>
-                                </div>
-                                <div class="split-item">
-                                    <h4>50%</h4>
-                                    <p>Hunting & Fishing Experiences</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="cta-container">
-                            <a href="#contact" class="nonprofit-cta">Support Our Mission</a>
-                            <p class="cta-note">Every donation directly supports our heroes</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="experience">
             <div class="experience-container">
                 <h2>Previous Experience</h2>
@@ -156,9 +105,9 @@
                         <div class="logo-grid">
                             <div class="logo-item">
                                 <div class="logo-image">
-                                    <img src="https://placehold.co/400x200/0A3161/FFFFFF?text=Elite+Turf" alt="Elite Synthetic Turf LLC Logo">
+                                    <img src="https://placehold.co/400x200/0A3161/FFFFFF?text=Turf+Girl" alt="Turf Girl Logo">
                                 </div>
-                                <span>Elite Synthetic Turf LLC</span>
+                                <span>Turf Girl</span>
                                 <p class="logo-description">Florida's #1 Supplier of Synthetic Turf</p>
                             </div>
                             <div class="logo-item">
@@ -197,7 +146,7 @@
                 <h3>Thompson Solutions LLC</h3>
                 <div class="contact-info">
                     <p><strong>Email:</strong> cam.thompson991@gmail.com</p>
-                    <p><strong>Phone:</strong> (561) 320-9889</p>
+                    <p><strong>Phone:</strong> (561) 427-9889</p>
                     <p><strong>Location:</strong> Palm Beach County, FL</p>
                 </div>
             </div>
@@ -214,443 +163,15 @@
         <button class="notification-close">×</button>
     </div>
 
+    <!-- Ensure the script file path is correct -->
+    <script src="./script.js"></script>
     <script>
-        // Initialize state first
-        const state = {
-            currentIndex: 0,
-            itemsPerSlide: window.innerWidth <= 768 ? 1 : 2,
-            isAnimating: false,
-            isEnabled: true
-        };
-        
-        // Constants
-        const SLIDE_DURATION = 300;
-        const SWIPE_THRESHOLD = 0.2;
-        const RECOVERY_DELAY = 10000;
-        const TOUCH_TIMEOUT = 5000;
-        
-        // Get carousel elements
-        const track = document.querySelector('.carousel-track');
-        const items = document.querySelectorAll('.logo-item');
-        const dots = document.querySelector('.carousel-dots');
-        const prevButton = document.querySelector('.carousel-button.prev');
-        const nextButton = document.querySelector('.carousel-button.next');
-
-        // Define updateCarousel function first
-        function updateCarousel(animate = true) {
-            try {
-                if (state.isAnimating) return;
-                
-                state.isAnimating = animate;
-                const slideWidth = 100 / state.itemsPerSlide;
-                
-                track.style.transition = animate ? `transform ${SLIDE_DURATION}ms ease` : 'none';
-                track.style.transform = `translateX(-${state.currentIndex * slideWidth}%)`;
-                
-                document.querySelectorAll('.dot').forEach((dot, index) => {
-                    dot.classList.toggle('active', index === state.currentIndex / state.itemsPerSlide);
-                });
-                
-                if (animate) {
-                    setTimeout(() => {
-                        state.isAnimating = false;
-                    }, SLIDE_DURATION);
-                }
-            } catch (error) {
-                handleError(error, 'updateCarousel', 'Navigation interrupted. Attempting to fix...');
-                state.isEnabled = false;
-                attemptRecovery(error, 'updateCarousel');
+        document.addEventListener("DOMContentLoaded", () => {
+            const preloader = document.querySelector(".preloader");
+            if (preloader) {
+                preloader.style.display = "none"; // Hide the preloader after the page loads
             }
-        }
-
-        // Initialize carousel
-        updateCarousel(false);
-        
-        // Notification System
-        function showNotification(message, type = 'success') {
-            try {
-                const notification = document.getElementById('notification');
-                if (!notification) return;
-                
-                const messageEl = notification.querySelector('.notification-message');
-                if (!messageEl) return;
-                
-                messageEl.textContent = message;
-                notification.className = `notification ${type}`;
-                notification.classList.add('show');
-                
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                }, 3000);
-            } catch (error) {
-                console.error('Notification error:', error);
-                if (type === 'error') alert(message);
-            }
-        }
-
-        // Error handling utility
-        function handleError(error, context, userMessage = null) {
-            console.error(`Error in ${context}:`, error);
-            
-            const errorMessages = {
-                'carousel setup': 'Unable to load experience section. Please refresh the page.',
-                'touchstart': 'Touch interaction failed. Try using the navigation buttons.',
-                'touchmove': 'Swipe interaction interrupted. Please try again.',
-                'updateCarousel': 'Navigation issue detected. Attempting to recover...',
-                'resize': 'Display adjustment failed. Reloading page...',
-                'querySelector': 'Page element not found. Please refresh the page.',
-                'recovery': 'Attempting to restore functionality...'
-            };
-            
-            showNotification(
-                userMessage || errorMessages[context] || 'Something went wrong. Please try again.',
-                'error'
-            );
-            
-            console.debug({
-                context,
-                errorType: error.name,
-                message: error.message,
-                stack: error.stack,
-                state: { ...state },
-                windowWidth: window.innerWidth,
-                isMobile: window.innerWidth <= 768
-            });
-        }
-
-        // Initialize touch variables
-        let touchStartX = 0;
-        let touchEndX = 0;
-        let isDragging = false;
-        let startTranslate = 0;
-        let resizeTimer;
-
-        // Add click handlers for navigation
-        prevButton.addEventListener('click', () => {
-            if (state.currentIndex > 0 && !state.isAnimating) {
-                state.currentIndex -= state.itemsPerSlide;
-                updateCarousel();
-            }
-        });
-        
-        nextButton.addEventListener('click', () => {
-            if (state.currentIndex < items.length - state.itemsPerSlide && !state.isAnimating) {
-                state.currentIndex += state.itemsPerSlide;
-                updateCarousel();
-            }
-        });
-
-        // Scroll to Top Button
-        const scrollTop = document.querySelector('.scroll-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTop.classList.add('visible');
-            } else {
-                scrollTop.classList.remove('visible');
-            }
-        });
-
-        // Add loading animation to service cards
-        const cards = document.querySelectorAll('.service-card');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        });
-        
-        cards.forEach(card => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.6s ease-out';
-            observer.observe(card);
-        });
-
-        document.querySelector('.notification-close').addEventListener('click', () => {
-            document.getElementById('notification').classList.remove('show');
-        });
-
-        // Handle active link states
-        function setActiveLink() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let currentSection = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.pageYOffset >= sectionTop - 100) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(currentSection)) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // Add scroll event listener for active states
-        window.addEventListener('scroll', setActiveLink);
-
-        // Smooth scroll to sections
-        document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Preloader
-        document.addEventListener('DOMContentLoaded', () => {
-            const preloader = document.querySelector('.preloader');
-            const logoImg = document.querySelector('.logo-img');
-
-            if (logoImg) {
-                logoImg.addEventListener('load', () => {
-                    setTimeout(() => {
-                        preloader.classList.add('loaded');
-                    }, 500);
-                });
-
-                logoImg.addEventListener('error', () => {
-                    // If logo fails to load, still hide preloader
-                    preloader.classList.add('loaded');
-                });
-            } else {
-                // If no logo image, hide preloader
-                preloader.classList.add('loaded');
-            }
-
-            // Fallback: hide preloader after 3 seconds regardless
-            setTimeout(() => {
-                preloader.classList.add('loaded');
-            }, 3000);
-        });
-
-        // Safe querySelector with error handling
-        function safeQuerySelector(selector, context = 'document') {
-            try {
-                const element = document.querySelector(selector);
-                if (!element) {
-                    throw new Error(`Required element "${selector}" not found. This might affect functionality.`);
-                }
-                return element;
-            } catch (error) {
-                handleError(error, 'querySelector', `Page layout issue detected with ${context}`);
-                return null;
-            }
-        }
-
-        // Recovery strategies configuration
-        const RECOVERY_CONFIG = {
-            maxAttempts: 3,
-            delayBetweenAttempts: 1000,
-            fallbackToStatic: true,
-            enableAutoPlay: true,
-            autoPlayInterval: 5000
-        };
-        
-        // Track recovery attempts
-        const recoveryState = {
-            attempts: 0,
-            lastError: null,
-            isRecovering: false,
-            autoPlayInterval: null
-        };
-        
-        // Recovery strategies
-        const recoveryStrategies = {
-            // Reset carousel to initial state
-            reset: async () => {
-                state.currentIndex = 0;
-                state.isAnimating = false;
-                state.isEnabled = true;
-                await updateCarousel(false);
-            },
-            
-            // Convert to static display if carousel fails
-            convertToStatic: () => {
-                track.style.transform = 'none';
-                track.style.transition = 'none';
-                track.style.display = 'flex';
-                track.style.flexWrap = 'wrap';
-                track.style.gap = '2rem';
-                track.style.justifyContent = 'center';
-                
-                // Hide carousel controls
-                prevButton.style.display = 'none';
-                nextButton.style.display = 'none';
-                dots.style.display = 'none';
-            },
-            
-            // Enable auto-play as fallback
-            enableAutoPlay: () => {
-                if (recoveryState.autoPlayInterval) {
-                    clearInterval(recoveryState.autoPlayInterval);
-                }
-                
-                recoveryState.autoPlayInterval = setInterval(() => {
-                    if (state.currentIndex < items.length - state.itemsPerSlide) {
-                        state.currentIndex += state.itemsPerSlide;
-                    } else {
-                        state.currentIndex = 0;
-                    }
-                    updateCarousel();
-                }, RECOVERY_CONFIG.autoPlayInterval);
-            }
-        };
-        
-        // Enhanced error recovery
-        async function attemptRecovery(error, context) {
-            if (recoveryState.isRecovering) return;
-            
-            recoveryState.isRecovering = true;
-            recoveryState.attempts++;
-            recoveryState.lastError = { error, context };
-            
-            console.warn(`Recovery attempt ${recoveryState.attempts} for ${context}`);
-            
-            try {
-                // Try primary recovery
-                await recoveryStrategies.reset();
-                
-                // If still failing after max attempts, try fallback strategies
-                if (recoveryState.attempts >= RECOVERY_CONFIG.maxAttempts) {
-                    if (RECOVERY_CONFIG.fallbackToStatic) {
-                        recoveryStrategies.convertToStatic();
-                        showNotification('Switched to simple view for better stability', 'info');
-                    } else if (RECOVERY_CONFIG.enableAutoPlay) {
-                        recoveryStrategies.enableAutoPlay();
-                        showNotification('Enabled automatic slideshow', 'info');
-                    }
-                }
-            } catch (recoveryError) {
-                console.error('Recovery failed:', recoveryError);
-                if (recoveryState.attempts >= RECOVERY_CONFIG.maxAttempts) {
-                    // Final fallback: reload page
-                    showNotification('Reloading page to restore functionality...', 'error');
-                    setTimeout(() => location.reload(), 2000);
-                }
-            } finally {
-                recoveryState.isRecovering = false;
-            }
-        }
-
-        // Touch handling with error recovery
-        let touchTimeout;
-        
-        track.addEventListener('touchstart', (e) => {
-            try {
-                touchStartX = e.touches[0].clientX;
-                isDragging = true;
-                startTranslate = state.currentIndex * (100 / state.itemsPerSlide);
-                track.style.transition = 'none';
-                
-                // Reset touch state after timeout
-                clearTimeout(touchTimeout);
-                touchTimeout = setTimeout(() => {
-                    isDragging = false;
-                    updateCarousel();
-                }, 5000);
-            } catch (error) {
-                handleError(error, 'touchstart');
-                isDragging = false;
-            }
-        }, { passive: true });
-        
-        track.addEventListener('touchmove', (e) => {
-            try {
-                if (!isDragging) return;
-                
-                const currentX = e.touches[0].clientX;
-                const diff = touchStartX - currentX;
-                const movePercent = (diff / window.innerWidth) * 100;
-                
-                track.style.transform = `translateX(-${startTranslate + movePercent}%)`;
-            } catch (error) {
-                handleError(error, 'touchmove');
-                isDragging = false;
-                updateCarousel();
-            }
-        }, { passive: true });
-        
-        // Add error recovery for resize
-        window.addEventListener('resize', () => {
-            try {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(() => {
-                    const newItemsPerSlide = window.innerWidth <= 768 ? 1 : 2;
-                    if (newItemsPerSlide !== state.itemsPerSlide) {
-                        state.itemsPerSlide = newItemsPerSlide;
-                        state.currentIndex = 0;
-                        updateCarousel(false);
-                    }
-                }, 250);
-            } catch (error) {
-                handleError(error, 'resize');
-                location.reload();
-            }
-        });
-        
-        // Health check and recovery
-        setInterval(() => {
-            if (!state.isEnabled && !recoveryState.isRecovering) {
-                attemptRecovery(new Error('Carousel disabled'), 'healthCheck');
-            }
-        }, RECOVERY_DELAY);
-
-        function handleImageError(img) {
-            console.error(`Failed to load image: ${img.src}`);
-            // Fallback to text if image fails
-            const fallbackText = document.createElement('div');
-            fallbackText.className = 'logo-fallback';
-            fallbackText.textContent = 'TS';
-            img.parentNode.replaceChild(fallbackText, img);
-        }
-
-        // Preload critical images
-        window.addEventListener('load', function() {
-            const criticalImages = [
-                './logo.svg'
-            ];
-            criticalImages.forEach(src => {
-                const img = new Image();
-                img.src = src;
-            });
-        });
-
-        // Add loading detection
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('load', function() {
-                this.classList.add('loaded');
-            });
-        });
-
-        // Image error handling
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('error', function() {
-                console.error(`Failed to load image: ${this.src}`);
-                this.style.display = 'none';
-            });
-        });
-
-        // Verify image loading
-        window.addEventListener('load', function() {
-            console.log('All resources finished loading!');
         });
     </script>
 </body>
-</html> 
+</html>
