@@ -3,174 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0A3161">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Contact Us - Thompson Solutions LLC</title>
+    <title>Contact | Thompson Solutions LLC</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: #f5f8fa;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .site-logo {
+            position: absolute;
+            top: 24px;
+            left: 32px;
+            z-index: 100;
+            display: block;
+        }
+        .site-logo img {
+            height: 140px;
+            width: auto;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(10,49,97,0.10);
+            background: #fff;
+            padding: 4px;
+        }
+        .contact-section {
+            max-width: 500px;
+            margin: 6rem auto 3rem auto;
+            background: #fff;
+            border-radius: 22px;
+            box-shadow: 0 8px 32px rgba(10,49,97,0.08), 0 1.5px 4px rgba(0,230,230,0.07);
+            padding: 2.5rem 2rem 2rem 2rem;
+            position: relative;
+        }
+        .contact-section h2 {
+            color: #0A3161;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            text-align: center;
+            font-weight: 700;
+        }
+        .contact-section p {
+            color: #444;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .contact-form label {
+            font-weight: 600;
+            color: #0A3161;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            border: 1.5px solid #dbe6f1;
+            border-radius: 7px;
+            padding: 0.7rem 1rem;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #f8fafd;
+            transition: border-color 0.2s;
+            resize: none;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 0.2rem;
+        }
+        .contact-form > div {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.2rem;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #0A3161;
+            outline: none;
+            background: #fff;
+        }
+        .cta-button {
+            background: #a51d43;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            padding: 0.9rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(10,49,97,0.07);
+        }
+        .cta-button:hover {
+            background: #0A3161;
+        }
+        .contact-info {
+            margin-top: 1.5rem;
+            background: #f5fafd;
+            border-radius: 10px;
+            padding: 1.2rem 1rem;
+            font-size: 1.07rem;
+            color: #0A3161;
+            box-shadow: 0 1px 3px rgba(10,49,97,0.04);
+            text-align: left;
+        }
+        .contact-info p {
+            margin: 0.7rem 0;
+            font-weight: 600;
+            color: #0A3161;
+        }
+        .contact-info a {
+            color: #0A3161;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .contact-info a:hover {
+            color: #a51d43;
+            text-decoration: underline;
+        }
+        @media (max-width: 700px) {
+            .site-logo {
+                top: 12px;
+                left: 12px;
+            }
+            .site-logo img {
+                height: 90px;
+            }
+            .contact-section {
+                padding: 1.2rem 0.5rem;
+                margin: 5rem 0.5rem 2rem 0.5rem;
+            }
+        }
+    </style>
 </head>
-<body class="contact-page">
-    <header>
-        <nav>
-            <div class="logo">
-                <div class="logo-mark">
-                    <img src="./2.svg" alt="Thompson Solutions" class="brand-svg" loading="eager">
-                </div>
-            </div>
-            <button class="menu-button" aria-label="Toggle menu">☰</button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
+<body>
+    <a href="index.html" class="site-logo">
+        <img src="images/logo.svg" alt="Thompson Solutions Logo">
+    </a>
     <main>
-        <section id="contact-hero">
-            <div class="hero-content">
-                <h2>Contact Us</h2>
-                <p>Get in touch with our team for professional business solutions</p>
-            </div>
-        </section>
-
-        <section id="contact-form">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>We'd love to hear from you. Please fill out this form or use our contact information below.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <h4>Email</h4>
-                            <p>cam.thompson991@gmail.com</p>
-                        </div>
-                        <div class="contact-item">
-                            <h4>Phone</h4>
-                            <p>(561) 320-9889</p>
-                        </div>
-                        <div class="contact-item">
-                            <h4>Address</h4>
-                            <p>Palm Beach County, FL</p>
-                        </div>
-                    </div>
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <p>Have a question or want to work together? Fill out the form below or reach out directly.</p>
+            <form action="https://formspree.io/f/xwpoynry" method="POST" class="contact-form" autocomplete="on">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required autocomplete="name">
                 </div>
-
-                <form class="contact-form" 
-                      name="contact" 
-                      method="POST" 
-                      data-netlify="true">
-                    <input type="hidden" name="form-name" value="contact">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:cam.thompson991@gmail.com">cam.thompson991@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:15614279889">(561) 427-9889</a></p>
+                <p><strong>Location:</strong> Palm Beach County, FL</p>
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Thompson Solutions LLC</h3>
-                <p>Contact: cam.thompson991@gmail.com</p>
-            </div>
-            <div class="footer-links">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
-
-    <a href="#" class="scroll-top" aria-label="Scroll to top">↑</a>
-
-    <div id="notification" class="notification">
-        <p class="notification-message"></p>
-        <button class="notification-close">×</button>
-    </div>
-
-    <script>
-        // Notification System
-        function showNotification(message, type = 'success') {
-            const notification = document.getElementById('notification');
-            const messageEl = notification.querySelector('.notification-message');
-            messageEl.textContent = message;
-            notification.className = `notification ${type}`;
-            notification.classList.add('show');
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        }
-
-        document.querySelector('.notification-close').addEventListener('click', () => {
-            document.getElementById('notification').classList.remove('show');
-        });
-
-        // Mobile Menu Toggle
-        const menuButton = document.querySelector('.menu-button');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuButton.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuButton.classList.toggle('active');
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-links') && !e.target.closest('.menu-button')) {
-                navLinks.classList.remove('active');
-                menuButton.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Scroll to Top Butto
-        const scrollTop = document.querySelector('.scroll-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTop.classList.add('visible');
-            } else {
-                scrollTop.classList.remove('visible');
-            }
-        });
-
-        scrollTop.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Form submission handling
-        const form = document.querySelector('.contact-form');
-        form.addEventListener('submit', () => {
-            const button = form.querySelector('button');
-            button.disabled = true;
-            button.textContent = 'Sending...';
-        });
-    </script>
 </body>
-</html> 
+</html>
