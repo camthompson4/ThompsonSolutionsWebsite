@@ -129,43 +129,6 @@
                 preloader.style.display = "none";
             }
         });
-
-        // Carousel functionality for Previous Experience section
-        document.addEventListener("DOMContentLoaded", function () {
-            const track = document.querySelector('.carousel-track .logo-grid');
-            const prevBtn = document.querySelector('.carousel-button.prev');
-            const nextBtn = document.querySelector('.carousel-button.next');
-            const items = document.querySelectorAll('.logo-item');
-            const visibleCount = 1; // Show 1 logo at a time (adjust as needed)
-            let currentIndex = 0;
-
-            function updateCarousel() {
-                const itemWidth = items[0].offsetWidth;
-                track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-            }
-
-            nextBtn.addEventListener('click', () => {
-                if (currentIndex < items.length - visibleCount) {
-                    currentIndex++;
-                    updateCarousel();
-                }
-            });
-
-            prevBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateCarousel();
-                }
-            });
-
-            // Optional: Responsive adjustment
-            window.addEventListener('resize', updateCarousel);
-
-            // Initial setup
-            track.style.display = 'flex';
-            track.style.transition = 'transform 0.5s cubic-bezier(.77,0,.18,1)';
-            updateCarousel();
-        });
     </script>
 </body>
 </html>
